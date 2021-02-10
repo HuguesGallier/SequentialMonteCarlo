@@ -1,0 +1,6 @@
+autograd
+matplotlib
+numpy
+pandas
+scipy
+statsmodels
