@@ -4,7 +4,7 @@ This project is an implementation of the article: [Adaptive tuning of Hamiltonia
 
 ## Context
 
-By starting to sample particles from an initial distribution π0, the **Sequential Monte Carlo** (SMC) samplers allow to approach a target distribution π by iterating a sequence of distributions πt: this is called **tempering**. This approach is a powerful alternative to MCMC in **Bayesian computation**. SMCs are robust to multimodality, they can benefit from parallel computing and they allox the computation of the normalizing constants, which can be useful for the choice of the model.
+By starting to sample particles from an initial distribution π0, the **Sequential Monte Carlo** (SMC) samplers allow to approach a target distribution π by iterating a sequence of distributions πt: this is called **tempering**. This approach is a powerful alternative to MCMC in **Bayesian computation**. SMCs are robust to multimodality, they can benefit from parallel computing and they allow the computation of the normalizing constants, which can be useful for the choice of the model.
 
 Particle propagation during iterations could be the most difficult part of the SMC and generally relies on MCMC kernels. Tuning the MCMC kernels' parameters aroused interest in recent years and the authors of the paper decided to focus on HMC (Hamiltonian Monte Carlo) kernels. Indeed, originally developed in Physics, HMC has become a standard tool in MCMC, in particular because of its better mixing in high dimensional problems.
 
@@ -22,7 +22,13 @@ As mentioned above, we want to simulate new particles under a posterior distribu
 - 1 with an Independence Sampler using a tuning procedure (**TunedISMC**). This algorithm is described in [A sequential particle filter method for static models](https://pdfs.semanticscholar.org/47bc/c2b86f3b4ec2742e7ef1ac2868077f2aae92.pdf)
 (Nicolas Chopin - Biometrika, 89, 3, pp. 539–551, 2002).
 
-If you want to see briefly the performances of the aformentioned samplers, you can use the functions *simple_test* and *performance_test* in quick_test.py.
+## How to use ?
+
+If you want to see briefly the performances of the aformentioned samplers, clone the repo, go to the parent folder and run:
+
+`python -m SequentialMonteCarlo.quick_tests`
+
+This will run 40 experiments of 1000 particles each on dimension 5, 10, 50 and 100, and return the MSE for the first dimension in each experiment.
 
 ## Authors
 

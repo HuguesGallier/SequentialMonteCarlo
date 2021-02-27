@@ -79,3 +79,10 @@ def performance_test(sampler="TunedISMC",
     mean_mse_over_dim.plot(title='Empirical MSE')
 
     return mse_over_dim
+
+
+if __name__ == "__main__":
+    print("Study of the performance of ISMC sampler in the simple "
+          "Gaussian Gaussian experiment. \n40 experiments of 1000 "
+          "particles are run in dimension 5, 10, 50 and 100.")
+    print(performance_test())

@@ -1,4 +1,4 @@
-from SMC.utils import SMCSampler, ExperimentParameters
+from ..utils import SMCSampler, ExperimentParameters
 
 import autograd.numpy as np
 import pandas as pd
